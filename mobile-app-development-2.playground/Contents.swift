@@ -50,4 +50,12 @@ let a_students = {(students: [Student]) -> [Student] in
     return students_with_a
 }
 
-print(a_students(grades))
+let get_names = {(students: [Student]) -> [String] in
+    var names: [String] = []
+    for student in students {
+        names.append(student.name)
+    }
+    return names
+}
+
+print("Students with A's: ", get_names(a_students(grades)))
